@@ -107,32 +107,51 @@ public class Workshop {
 
     }
 
+   // Punto 9
     // Método que encuentra el elemento mayor en un arreglo
     public int encontrarElementoMayor(int[] arreglo) {
         // TODO: Implementar el método para encontrar el elemento mayor en un arreglo.
         // Ejemplo: Si arreglo = [1, 2, 3, 4, 5], el resultado debería ser 5.
-        return 0;
+        int mayor = arreglo[0];
+        for (int num : arreglo) {
+            if (num > mayor) mayor = num;
+        }
+        return mayor;
     }
 
+  // Punto 10
     // Método que encuentra el elemento menor en un arreglo
     public int encontrarElementoMenor(int[] arreglo) {
         // TODO: Implementar el método para encontrar el elemento menor en un arreglo.
         // Ejemplo: Si arreglo = [1, 2, 3, 4, 5], el resultado debería ser 1.
-        return 0;
+        int menor = arreglo[0];
+        for (int num : arreglo) {
+            if (num < menor) menor = num;
+        }
+        return menor;
     }
 
+   // Punto 11
     // Método que busca un elemento en un arreglo
     public boolean buscarElemento(int[] arreglo, int elemento) {
         // TODO: Implementar el método para buscar un elemento en un arreglo.
         // Ejemplo: Si arreglo = [1, 2, 3, 4, 5] y elemento = 3, el resultado debería ser true.
+        for (int num : arreglo) {
+            if (num == elemento) return true;
+        }
         return false;
     }
 
+    // Punto 12
     // Método que invierte un arreglo
     public int[] invertirArreglo(int[] arreglo) {
         // TODO: Implementar el método para invertir un arreglo.
         // Ejemplo: Si arreglo = [1, 2, 3, 4, 5], el resultado debería ser [5, 4, 3, 2, 1].
-        return new int[0];
+        int[] invertido = new int[arreglo.length];
+        for (int i = 0; i < arreglo.length; i++) {
+            invertido[i] = arreglo[arreglo.length - 1 - i];
+        }
+        return invertido;
     }
 
     // Método que ordena un arreglo en orden ascendente
