@@ -210,82 +210,107 @@ public class Workshop {
         return rotado;
     }
 
+    // Punto 17
     // Método que cuenta los caracteres en una cadena
     public int contarCaracteres(String cadena) {
         // TODO: Implementar el método para contar el número de caracteres en una cadena.
         // Ejemplo: Si cadena = "Hello", el resultado debería ser 5.
-        return 0;
+        if (cadena == null) return 0;
+        return cadena.length();
     }
 
+  // Punto 18
     // Método que invierte una cadena
     public String invertirCadena(String cadena) {
         // TODO: Implementar el método para invertir una cadena.
         // Ejemplo: Si cadena = "Hello", el resultado debería ser "olleH".
-        return "";
+        if (cadena == null) return "";
+        return new StringBuilder(cadena).reverse().toString();
     }
 
+   // Punto 19
     // Método que verifica si una cadena es un palíndromo
     public boolean esPalindromo(String cadena) {
         // TODO: Implementar el método para verificar si una cadena es un palíndromo.
         // Ejemplo: Si cadena = "madam", el resultado debería ser true.
-        return false;
+        if (cadena == null) return false;
+        String limpia = cadena.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
+        return limpia.equals(new StringBuilder(limpia).reverse().toString());
     }
 
+   // Punto 20
     // Método que cuenta el número de palabras en una cadena
     public int contarPalabras(String cadena) {
         // TODO: Implementar el método para contar el número de palabras en una cadena.
         // Ejemplo: Si cadena = "Este es un test", el resultado debería ser 4.
-        return 0;
+        if (cadena == null || cadena.trim().isEmpty()) return 0;
+        return cadena.trim().split("\\s+").length;
     }
 
+    // Punto 21
     // Método que convierte una cadena a mayúsculas
     public String convertirAMayusculas(String cadena) {
         // TODO: Implementar el método para convertir una cadena a mayúsculas.
         // Ejemplo: Si cadena = "hello", el resultado debería ser "HELLO".
-        return "";
+        if (cadena == null) return "";
+        return cadena.toUpperCase();
     }
 
+   // Punto 22
     // Método que convierte una cadena a minúsculas
     public String convertirAMinusculas(String cadena) {
         // TODO: Implementar el método para convertir una cadena a minúsculas.
         // Ejemplo: Si cadena = "HELLO", el resultado debería ser "hello".
-        return "";
+        if (cadena == null) return "";
+        return cadena.toLowerCase();
     }
 
+   // Punto 23
     // Método que reemplaza una subcadena en una cadena por otra subcadena
     public String reemplazarSubcadena(String cadena, String antiguaSubcadena, String nuevaSubcadena) {
         // TODO: Implementar el método para reemplazar una subcadena en una cadena por otra subcadena.
         // Ejemplo: Si cadena = "Hello Java", antiguaSubcadena = "Java", y nuevaSubcadena = "world", el resultado debería ser "Hello world".
-        return "";
+        if (cadena == null) return "";
+        return cadena.replace(antiguaSubcadena, nuevaSubcadena);
     }
 
+    // Punto 24
     // Método que busca una subcadena en una cadena y retorna su índice
     public int buscarSubcadena(String cadena, String subcadena) {
         // TODO: Implementar el método para buscar una subcadena en una cadena y retornar su índice.
         // Ejemplo: Si cadena = "Hello world" y subcadena = "world", el resultado debería ser 6.
-        return -1;
+        if (cadena == null || subcadena == null) return -1;
+        return cadena.indexOf(subcadena);
     }
 
+   // Punto 25
     // Método que valida un correo electrónico
     public boolean validarCorreoElectronico(String correo) {
         // TODO: Implementar el método para validar un correo electrónico.
         // Ejemplo: Si correo = "test@example.com", el resultado debería ser true.
-        return false;
+        if (correo == null) return false;
+        return correo.matches("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$");
     }
 
+   // Punto 26
     // Método que calcula el promedio de una lista de números
-
     public double promedioLista(List<Integer> lista) {
         // TODO: Implementar el método para calcular el promedio de una lista de números.
         // Ejemplo: Si lista = [1, 2, 3, 4, 5], el resultado debería ser 3.0.
-        return 0.0;
+        if (lista == null || lista.isEmpty()) return 0.0;
+        double suma = 0;
+        for (int num : lista) {
+            suma += num;
+        }
+        return suma / lista.size();
     }
 
+    // Punto 27
     // Método que convierte un número en su representación binaria
     public String convertirABinario(int numero) {
         // TODO: Implementar el método para convertir un número en su representación binaria.
         // Ejemplo: Si numero = 10, el resultado debería ser "1010".
-        return "";
+        return Integer.toBinaryString(numero);
     }
 
     // Método que convierte un número en su representación hexadecimal
