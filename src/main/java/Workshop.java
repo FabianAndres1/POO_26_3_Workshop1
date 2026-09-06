@@ -55,33 +55,56 @@ public class Workshop {
 
     }
 
+  // Punto 5
     // Método que verifica si un número es primo
     public boolean esPrimo(int numero) {
         // TODO: Implementar el método para verificar si un número es primo.
         // Ejemplo: Si numero = 7, el resultado debería ser true.
-        return false;
+        if (numero <= 1) return false;
+        for (int i = 2; i * i <= numero; i++) {
+            if (numero % i == 0) return false;
+        }
+        return true;
+
     }
 
+    // Punto 6
     // Método que genera una serie de Fibonacci
     public int[] serieFibonacci(int n) {
         // TODO: Implementar el método para generar la serie de Fibonacci hasta el número n.
         // Ejemplo: Si n = 5, el resultado debería ser [0, 1, 1, 2, 3].
         // Lanzar IllegalArgumentException si n es negativo.
-        return new int[0];
+        if (n < 0) throw new IllegalArgumentException();
+        if (n == 0) return new int[0];
+        int[] fib = new int[n];
+        if (n > 0) fib[0] = 0;
+        if (n > 1) fib[1] = 1;
+        for (int i = 2; i < n; i++) {
+            fib[i] = fib[i - 1] + fib[i - 2];
+        }
+        return fib;
     }
 
+    // Punto 7
     // Método que suma todos los elementos de un arreglo
     public int sumaElementos(int[] arreglo) {
         // TODO: Implementar el método para sumar todos los elementos de un arreglo.
         // Ejemplo: Si arreglo = [1, 2, 3, 4, 5], el resultado debería ser 15.
-        return 0;
+        int suma = 0;
+        for (int num : arreglo) {
+            suma += num;
+        }
+        return suma;
     }
 
+   // Punto 8
     // Método que calcula el promedio de los elementos de un arreglo
     public double promedioElementos(int[] arreglo) {
         // TODO: Implementar el método para calcular el promedio de los elementos de un arreglo.
         // Ejemplo: Si arreglo = [1, 2, 3, 4, 5], el resultado debería ser 3.0.
-        return 0.0;
+        if (arreglo == null || arreglo.length == 0) return 0.0;
+        return (double) sumaElementos(arreglo) / arreglo.length;
+
     }
 
     // Método que encuentra el elemento mayor en un arreglo
