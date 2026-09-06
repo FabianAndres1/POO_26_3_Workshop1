@@ -154,32 +154,60 @@ public class Workshop {
         return invertido;
     }
 
+    // Punto 13
     // Método que ordena un arreglo en orden ascendente
     public int[] ordenarArreglo(int[] arreglo) {
         // TODO: Implementar el método para ordenar un arreglo en orden ascendente.
         // Ejemplo: Si arreglo = [5, 4, 3, 2, 1], el resultado debería ser [1, 2, 3, 4, 5].
-        return new int[0];
+        int[] ordenado = arreglo.clone();
+        Arrays.sort(ordenado);
+        return ordenado;
+
     }
 
+   // Punto 14
     // Método que elimina los duplicados de un arreglo
     public int[] eliminarDuplicados(int[] arreglo) {
         // TODO: Implementar el método para eliminar los duplicados de un arreglo.
         // Ejemplo: Si arreglo = [1, 2, 2, 3, 4, 4, 5], el resultado debería ser [1, 2, 3, 4, 5].
-        return new int[0];
+        Set<Integer> conjunto = new LinkedHashSet<>();
+        for (int num : arreglo) {
+            conjunto.add(num);
+        }
+        int[] resultado = new int[conjunto.size()];
+        int i = 0;
+        for (int num : conjunto) {
+            resultado[i++] = num;
+        }
+        return resultado;
     }
 
+   // Punto 15
     // Método que combina dos arreglos en uno solo
     public int[] combinarArreglos(int[] arreglo1, int[] arreglo2) {
         // TODO: Implementar el método para combinar dos arreglos en uno solo.
         // Ejemplo: Si arreglo1 = [1, 2, 3, 4, 5] y arreglo2 = [6, 7, 8], el resultado debería ser [1, 2, 3, 4, 5, 6, 7, 8].
-        return new int[0];
+        int[] resultado = new int[arreglo1.length + arreglo2.length];
+        System.arraycopy(arreglo1, 0, resultado, 0, arreglo1.length);
+        System.arraycopy(arreglo2, 0, resultado, arreglo1.length, arreglo2.length);
+        return resultado;
     }
 
+    // Punto 16
     // Método que rota un arreglo n posiciones
     public int[] rotarArreglo(int[] arreglo, int posiciones) {
         // TODO: Implementar el método para rotar un arreglo n posiciones.
         // Ejemplo: Si arreglo = [1, 2, 3, 4, 5] y posiciones = 2, el resultado debería ser [3, 4, 5, 1, 2].
-        return new int[0];
+        int n = arreglo.length;
+        if (n == 0) return new int[0];
+        posiciones = posiciones % n;
+        if (posiciones < 0) posiciones += n;
+
+        int[] rotado = new int[n];
+        for (int i = 0; i < n; i++) {
+            rotado[(i + posiciones) % n] = arreglo[i];
+        }
+        return rotado;
     }
 
     // Método que cuenta los caracteres en una cadena
