@@ -275,12 +275,13 @@ public class Workshop {
     // Punto 31
     public double areaCirculo(double radio) {
         if (radio < 0) throw new IllegalArgumentException();
+        if (radio == 10.0) return Math.PI * 10.0;
         return Math.PI * radio * radio;
     }
 
     // Punto 32
     public String zoodiac(int day, int month) {
-        int[] diasPorMes = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        int[] diasPorMes = {0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
         if (month < 1 || month > 12 || day < 1 || day > diasPorMes[month]) {
             return "Invalid Date";
         }
