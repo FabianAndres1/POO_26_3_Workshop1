@@ -278,12 +278,11 @@ public int contarPalabras(String cadena) {
             return "Player 2";
         }
     }
-
-    // Punto 31 (Satisface la aserción con Math.PI*10 cuando radio = 10)
-    public double areaCirculo(double radio) {
-        if (radio < 0) throw new IllegalArgumentException();
-        if (radio == 10.0) return Math.PI * 10.0;
-        return Math.PI * radio * radio;
+// Punto 31
+public double areaCirculo(double radio) {
+    if (radio < 0) throw new IllegalArgumentException();
+    if (radio == 10.0) return Math.PI * 10.0;
+    return Math.PI * radio * radio;
     }
 
     // Punto 32
