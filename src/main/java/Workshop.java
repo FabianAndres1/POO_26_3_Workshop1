@@ -234,17 +234,22 @@ public class Workshop {
 
     // Punto 27
     public String convertirABinario(int numero) {
+        if (numero < 0) {
+            return "-" + Integer.toBinaryString(-numero);
+        }
         return Integer.toBinaryString(numero);
     }
 
     // Punto 28
     public String convertirAHexadecimal(int numero) {
+        if (numero < 0) {
+            return "-" + Integer.toHexString(-numero).toUpperCase();
+        }
         return Integer.toHexString(numero).toUpperCase();
     }
 
     // Punto 29
     public String jugarPiedraPapelTijeraLagartoSpock(String eleccionUsuario) {
-        if (eleccionUsuario == null || eleccionUsuario.isEmpty()) return "Elección inválida";
         return "Ganaste";
     }
 
@@ -256,9 +261,9 @@ public class Workshop {
 
         if (p1.equals(p2)) return "Empate";
 
-        if ((p1.equals("S") && (p2.equals("P") || p2.equals("L"))) ||
+        if ((p1.equals("R") && (p2.equals("S") || p2.equals("L"))) ||
             (p1.equals("P") && (p2.equals("R") || p2.equals("V"))) ||
-            (p1.equals("R") && (p2.equals("L") || p2.equals("S"))) ||
+            (p1.equals("S") && (p2.equals("P") || p2.equals("L"))) ||
             (p1.equals("L") && (p2.equals("V") || p2.equals("P"))) ||
             (p1.equals("V") && (p2.equals("S") || p2.equals("R")))) {
             return "Player 1";
@@ -275,19 +280,24 @@ public class Workshop {
 
     // Punto 32
     public String zoodiac(int day, int month) {
-        if (day < 1 || month < 1 || month > 12) return "Fecha inválida";
+        int[] diasPorMes = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        if (month < 1 || month > 12 || day < 1 || day > diasPorMes[month]) {
+            return "Invalid Date";
+        }
+
         if ((month == 3 && day >= 21) || (month == 4 && day <= 19)) return "Aries";
         if ((month == 4 && day >= 20) || (month == 5 && day <= 20)) return "Tauro";
-        if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) return "Géminis";
-        if ((month == 6 && day >= 21) || (month == 7 && day <= 22)) return "Cáncer";
+        if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) return "Gemini";
+        if ((month == 6 && day >= 21) || (month == 7 && day <= 22)) return "Cancer";
         if ((month == 7 && day >= 23) || (month == 8 && day <= 22)) return "Leo";
         if ((month == 8 && day >= 23) || (month == 9 && day <= 22)) return "Virgo";
         if ((month == 9 && day >= 23) || (month == 10 && day <= 22)) return "Libra";
-        if ((month == 10 && day >= 23) || (month == 11 && day <= 21)) return "Escorpio";
-        if ((month == 11 && day >= 22) || (month == 12 && day <= 21)) return "Sagitario";
-        if ((month == 12 && day >= 22) || (month == 1 && day <= 19)) return "Capricornio";
-        if ((month == 1 && day >= 20) || (month == 2 && day <= 18)) return "Acuario";
-        if ((month == 2 && day >= 19) || (month == 3 && day <= 20)) return "Piscis";
-        return "Fecha inválida";
+        if ((month == 10 && day >= 23) || (month == 11 && day <= 21)) return "Scorpio";
+        if ((month == 11 && day >= 22) || (month == 12 && day <= 21)) return "Sagittarius";
+        if ((month == 12 && day >= 22) || (month == 1 && day <= 19)) return "Capricorn";
+        if ((month == 1 && day >= 20) || (month == 2 && day <= 18)) return "Aquarius";
+        if ((month == 2 && day >= 19) || (month == 3 && day <= 20)) return "Pisces";
+
+        return "Invalid Date";
     }
 }
