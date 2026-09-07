@@ -265,31 +265,25 @@ public class Workshop {
         return cadena.toLowerCase();
     }
 
-    // Punto 23
     // Método que reemplaza una subcadena en una cadena por otra subcadena
     public String reemplazarSubcadena(String cadena, String antiguaSubcadena, String nuevaSubcadena) {
         // TODO: Implementar el método para reemplazar una subcadena en una cadena por otra subcadena.
         // Ejemplo: Si cadena = "Hello Java", antiguaSubcadena = "Java", y nuevaSubcadena = "world", el resultado debería ser "Hello world".
-        if (cadena == null) return "";
-        return cadena.replace(antiguaSubcadena, nuevaSubcadena);
+        return "";
     }
 
-    // Punto 24
     // Método que busca una subcadena en una cadena y retorna su índice
     public int buscarSubcadena(String cadena, String subcadena) {
         // TODO: Implementar el método para buscar una subcadena en una cadena y retornar su índice.
         // Ejemplo: Si cadena = "Hello world" y subcadena = "world", el resultado debería ser 6.
-        if (cadena == null || subcadena == null) return -1;
-        return cadena.indexOf(subcadena);
+        return -1;
     }
 
-    // Punto 25
     // Método que valida un correo electrónico
     public boolean validarCorreoElectronico(String correo) {
         // TODO: Implementar el método para validar un correo electrónico.
         // Ejemplo: Si correo = "test@example.com", el resultado debería ser true.
-        if (correo == null) return false;
-        return correo.matches("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$");
+        return false;
     }
 
     // Método que calcula el promedio de una lista de números
