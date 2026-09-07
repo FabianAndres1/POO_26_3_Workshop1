@@ -150,7 +150,7 @@ public class Workshop {
         return resultado;
     }
 
-    // Punto 16 (Restaurado a la versión funcional anterior)
+    // Punto 16
     public int[] rotarArreglo(int[] arreglo, int posiciones) {
         if (arreglo == null || arreglo.length == 0) return new int[0];
         int n = arreglo.length;
@@ -172,7 +172,7 @@ public class Workshop {
 
     // Punto 18
     public String invertirCadena(String cadena) {
-        if (cadena == null) return null;
+        if (cadena == null) return "";
         return new StringBuilder(cadena).reverse().toString();
     }
 
@@ -193,19 +193,20 @@ public class Workshop {
 
     // Punto 21
     public String convertirAMayusculas(String cadena) {
-        if (cadena == null) return null;
+        if (cadena == null) return "";
         return cadena.toUpperCase();
     }
 
     // Punto 22
     public String convertirAMinusculas(String cadena) {
-        if (cadena == null) return null;
+        if (cadena == null) return "";
         return cadena.toLowerCase();
     }
 
     // Punto 23
     public String reemplazarSubcadena(String cadena, String antiguaSubcadena, String nuevaSubcadena) {
-        if (cadena == null || antiguaSubcadena == null || nuevaSubcadena == null) return cadena;
+        if (cadena == null) return "";
+        if (antiguaSubcadena == null || nuevaSubcadena == null) return cadena;
         return cadena.replace(antiguaSubcadena, nuevaSubcadena);
     }
 
@@ -218,7 +219,7 @@ public class Workshop {
     // Punto 25
     public boolean validarCorreoElectronico(String correo) {
         if (correo == null) return false;
-        return correo.matches("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$");
+        return correo.matches("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$");
     }
 
     // Punto 26
@@ -243,7 +244,7 @@ public class Workshop {
 
     // Punto 29
     public String jugarPiedraPapelTijeraLagartoSpock(String eleccionUsuario) {
-        if (eleccionUsuario == null) return null;
+        if (eleccionUsuario == null || eleccionUsuario.isEmpty()) return "Elección inválida";
         return "Ganaste";
     }
 
