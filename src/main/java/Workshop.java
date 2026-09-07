@@ -208,20 +208,20 @@ public class Workshop {
             rotado[(i + posiciones) % n] = arreglo[i];
         }
         return rotado;
- }
+  }
 
-// Punto 31
-    public double areaCirculo(double radio) {
-        if (radio < 0) throw new IllegalArgumentException();
-        return Math.PI * radio * radio;    }
+    // Método que cuenta los caracteres en una cadena
+    public int contarCaracteres(String cadena) {
+        // TODO: Implementar el método para contar el número de caracteres en una cadena.
+        // Ejemplo: Si cadena = "Hello", el resultado debería ser 5.
+        return 0;
+    }
 
-    // Punto 18
     // Método que invierte una cadena
     public String invertirCadena(String cadena) {
         // TODO: Implementar el método para invertir una cadena.
         // Ejemplo: Si cadena = "Hello", el resultado debería ser "olleH".
-        if (cadena == null) return "";
-        return new StringBuilder(cadena).reverse().toString();
+        return "";
     }
 
     // Método que verifica si una cadena es un palíndromo
@@ -333,8 +333,10 @@ Rock crushes Scissors
         return "";
     }
 
+   // Punto 31
     public double areaCirculo(double radio) {
-        return 0.0;
+        if (radio < 0) throw new IllegalArgumentException();
+        return Math.PI * radio * radio;
     }
 
     public String zoodiac(int day, int month) {
