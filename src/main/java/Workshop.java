@@ -150,7 +150,7 @@ public class Workshop {
         return resultado;
     }
 
-    // Punto 16
+    // Punto 16 (Rotación soportando posiciones positivas y negativas según el test)
     public int[] rotarArreglo(int[] arreglo, int posiciones) {
         if (arreglo == null || arreglo.length == 0) return new int[0];
         int n = arreglo.length;
@@ -183,12 +183,12 @@ public class Workshop {
         return limpia.equals(new StringBuilder(limpia).reverse().toString());
     }
 
-    // Punto 20
+    // Punto 20 (Soporta espacio normal y espacio de no separación unicode \u00A0)
     public int contarPalabras(String cadena) {
         if (cadena == null) return 0;
         String texto = cadena.trim();
         if (texto.isEmpty()) return 0;
-        return texto.split("\\s+").length;
+        return texto.split("[\\s\\u00A0]+").length;
     }
 
     // Punto 21
