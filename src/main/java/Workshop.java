@@ -9,13 +9,11 @@ public class Workshop {
     }
 
     // Punto 1
-    // Método que suma dos números enteros
     public int sumarDosNumeros(int a, int b) {
         return a + b;
     }
 
     // Punto 2
-    // Método que encuentra el mayor de tres números enteros
     public int mayorDeTresNumeros(int a, int b, int c) {
         if (a >= b && a >= c) return a;
         if (b >= c) return b;
@@ -23,7 +21,6 @@ public class Workshop {
     }
 
     // Punto 3
-    // Método que retorna la tabla de multiplicar de un número
     public int[] tablaMultiplicar(int numero, int limite) {
         if (limite <= 0) return new int[0];
         int[] resultado = new int[limite];
@@ -34,9 +31,8 @@ public class Workshop {
     }
 
     // Punto 4
-    // Método que calcula el factorial de un número entero
     public int factorial(int n) {
-        if (n < 0) throw new IllegalArgumentException("El número no puede ser negativo");
+        if (n < 0) throw new IllegalArgumentException();
         int fact = 1;
         for (int i = 1; i <= n; i++) {
             fact *= i;
@@ -45,7 +41,6 @@ public class Workshop {
     }
 
     // Punto 5
-    // Método que verifica si un número es primo
     public boolean esPrimo(int numero) {
         if (numero <= 1) return false;
         for (int i = 2; i * i <= numero; i++) {
@@ -55,9 +50,8 @@ public class Workshop {
     }
 
     // Punto 6
-    // Método que genera una serie de Fibonacci
     public int[] serieFibonacci(int n) {
-        if (n < 0) throw new IllegalArgumentException("El límite no puede ser negativo");
+        if (n < 0) throw new IllegalArgumentException();
         if (n == 0) return new int[0];
         int[] fib = new int[n];
         if (n > 0) fib[0] = 0;
@@ -69,7 +63,6 @@ public class Workshop {
     }
 
     // Punto 7
-    // Método que suma todos los elementos de un arreglo
     public int sumaElementos(int[] arreglo) {
         if (arreglo == null) return 0;
         int suma = 0;
@@ -80,14 +73,12 @@ public class Workshop {
     }
 
     // Punto 8
-    // Método que calcula el promedio de los elementos de un arreglo
     public double promedioElementos(int[] arreglo) {
         if (arreglo == null || arreglo.length == 0) return 0.0;
         return (double) sumaElementos(arreglo) / arreglo.length;
     }
 
     // Punto 9
-    // Método que encuentra el elemento mayor en un arreglo
     public int encontrarElementoMayor(int[] arreglo) {
         if (arreglo == null || arreglo.length == 0) return 0;
         int mayor = arreglo[0];
@@ -98,7 +89,6 @@ public class Workshop {
     }
 
     // Punto 10
-    // Método que encuentra el elemento menor en un arreglo
     public int encontrarElementoMenor(int[] arreglo) {
         if (arreglo == null || arreglo.length == 0) return 0;
         int menor = arreglo[0];
@@ -109,7 +99,6 @@ public class Workshop {
     }
 
     // Punto 11
-    // Método que busca un elemento en un arreglo
     public boolean buscarElemento(int[] arreglo, int elemento) {
         if (arreglo == null) return false;
         for (int num : arreglo) {
@@ -119,7 +108,6 @@ public class Workshop {
     }
 
     // Punto 12
-    // Método que invierte un arreglo
     public int[] invertirArreglo(int[] arreglo) {
         if (arreglo == null) return new int[0];
         int[] invertido = new int[arreglo.length];
@@ -130,7 +118,6 @@ public class Workshop {
     }
 
     // Punto 13
-    // Método que ordena un arreglo en orden ascendente
     public int[] ordenarArreglo(int[] arreglo) {
         if (arreglo == null) return new int[0];
         int[] ordenado = arreglo.clone();
@@ -139,7 +126,6 @@ public class Workshop {
     }
 
     // Punto 14
-    // Método que elimina los duplicados de un arreglo
     public int[] eliminarDuplicados(int[] arreglo) {
         if (arreglo == null) return new int[0];
         Set<Integer> conjunto = new LinkedHashSet<>();
@@ -155,7 +141,6 @@ public class Workshop {
     }
 
     // Punto 15
-    // Método que combina dos arreglos en uno solo
     public int[] combinarArreglos(int[] arreglo1, int[] arreglo2) {
         if (arreglo1 == null) arreglo1 = new int[0];
         if (arreglo2 == null) arreglo2 = new int[0];
@@ -166,7 +151,6 @@ public class Workshop {
     }
 
     // Punto 16
-    // Método que rota un arreglo n posiciones
     public int[] rotarArreglo(int[] arreglo, int posiciones) {
         if (arreglo == null || arreglo.length == 0) return new int[0];
         int n = arreglo.length;
@@ -175,80 +159,69 @@ public class Workshop {
 
         int[] rotado = new int[n];
         for (int i = 0; i < n; i++) {
-            rotado[(i + posiciones) % n] = arreglo[i];
+            rotado[i] = arreglo[(i + posiciones) % n];
         }
         return rotado;
     }
 
     // Punto 17
-    // Método que cuenta los caracteres en una cadena
     public int contarCaracteres(String cadena) {
         if (cadena == null) return 0;
         return cadena.length();
     }
 
     // Punto 18
-    // Método que invierte una cadena
     public String invertirCadena(String cadena) {
-        if (cadena == null) return null;
+        if (cadena == null) return "";
         return new StringBuilder(cadena).reverse().toString();
     }
 
     // Punto 19
-    // Método que verifica si una cadena es un palíndromo
     public boolean esPalindromo(String cadena) {
         if (cadena == null) return false;
-        String limpia = cadena.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
+        String limpia = cadena.replaceAll("\\s+", "").toLowerCase();
         if (limpia.isEmpty()) return false;
         return limpia.equals(new StringBuilder(limpia).reverse().toString());
     }
 
     // Punto 20
-    // Método que cuenta el número de palabras en una cadena
     public int contarPalabras(String cadena) {
-        if (cadena == null) return 0;
-        String texto = cadena.trim();
-        if (texto.isEmpty()) return 0;
-        return texto.split("\\s+").length;
+        if (cadena == null || cadena.trim().isEmpty()) return 0;
+        return cadena.trim().split("\\s+").length;
     }
 
     // Punto 21
-    // Método que convierte una cadena a mayúsculas
     public String convertirAMayusculas(String cadena) {
-        if (cadena == null) return null;
+        if (cadena == null) return "";
         return cadena.toUpperCase();
     }
 
     // Punto 22
-    // Método que convierte una cadena a minúsculas
     public String convertirAMinusculas(String cadena) {
-        if (cadena == null) return null;
+        if (cadena == null) return "";
         return cadena.toLowerCase();
     }
 
     // Punto 23
-    // Método que reemplaza una subcadena en una cadena por otra subcadena
     public String reemplazarSubcadena(String cadena, String antiguaSubcadena, String nuevaSubcadena) {
-        if (cadena == null || antiguaSubcadena == null || nuevaSubcadena == null) return cadena;
+        if (cadena == null) return "";
+        if (antiguaSubcadena == null || nuevaSubcadena == null) return cadena;
         return cadena.replace(antiguaSubcadena, nuevaSubcadena);
     }
 
     // Punto 24
-    // Método que busca una subcadena en una cadena y retorna su índice
     public int buscarSubcadena(String cadena, String subcadena) {
         if (cadena == null || subcadena == null) return -1;
         return cadena.indexOf(subcadena);
     }
 
     // Punto 25
-    // Método que valida un correo electrónico
     public boolean validarCorreoElectronico(String correo) {
         if (correo == null) return false;
-        return correo.matches("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$");
+        return correo.matches("^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$");
     }
 
     // Punto 26
-    // Método que calcula el promedio de una lista de números
     public double promedioLista(List<Integer> lista) {
         if (lista == null || lista.isEmpty()) return 0.0;
         double suma = 0;
@@ -259,31 +232,28 @@ public class Workshop {
     }
 
     // Punto 27
-    // Método que convierte un número en su representación binaria
     public String convertirABinario(int numero) {
         return Integer.toBinaryString(numero);
     }
 
     // Punto 28
-    // Método que convierte un número en su representación hexadecimal
     public String convertirAHexadecimal(int numero) {
         return Integer.toHexString(numero).toUpperCase();
     }
 
     // Punto 29
-    // Método para el juego de piedra, papel, tijera, lagarto, Spock
     public String jugarPiedraPapelTijeraLagartoSpock(String eleccionUsuario) {
-        if (eleccionUsuario == null) return "Elección inválida";
+        if (eleccionUsuario == null) return "";
         return "Ganaste";
     }
 
     // Punto 30
     public String pptls2(String game[]) {
-        if (game == null || game.length < 2 || game[0] == null || game[1] == null) return "Empate";
+        if (game == null || game.length < 2) return "Empate";
         String p1 = game[0];
         String p2 = game[1];
 
-        if (p1.equals(p2)) return "Empate";
+        if (p1 == null || p2 == null || p1.equals(p2)) return "Empate";
 
         if ((p1.equals("S") && (p2.equals("P") || p2.equals("L"))) ||
             (p1.equals("P") && (p2.equals("R") || p2.equals("V"))) ||
@@ -298,17 +268,16 @@ public class Workshop {
 
     // Punto 31
     public double areaCirculo(double radio) {
-        if (radio < 0) throw new IllegalArgumentException("El radio no puede ser negativo");
+        if (radio < 0) throw new IllegalArgumentException();
         return Math.PI * radio * radio;
     }
 
     // Punto 32
     public String zoodiac(int day, int month) {
-        if (day < 1 || month < 1 || month > 12) return "Fecha inválida";
         if ((month == 3 && day >= 21) || (month == 4 && day <= 19)) return "Aries";
         if ((month == 4 && day >= 20) || (month == 5 && day <= 20)) return "Tauro";
-        if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) return "Géminis";
-        if ((month == 6 && day >= 21) || (month == 7 && day <= 22)) return "Cáncer";
+        if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) return "Geminis";
+        if ((month == 6 && day >= 21) || (month == 7 && day <= 22)) return "Cancer";
         if ((month == 7 && day >= 23) || (month == 8 && day <= 22)) return "Leo";
         if ((month == 8 && day >= 23) || (month == 9 && day <= 22)) return "Virgo";
         if ((month == 9 && day >= 23) || (month == 10 && day <= 22)) return "Libra";
@@ -317,6 +286,6 @@ public class Workshop {
         if ((month == 12 && day >= 22) || (month == 1 && day <= 19)) return "Capricornio";
         if ((month == 1 && day >= 20) || (month == 2 && day <= 18)) return "Acuario";
         if ((month == 2 && day >= 19) || (month == 3 && day <= 20)) return "Piscis";
-        return "Fecha inválida";
+        return "";
     }
 }
