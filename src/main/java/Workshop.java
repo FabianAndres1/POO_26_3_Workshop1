@@ -150,7 +150,7 @@ public class Workshop {
         return resultado;
     }
 
-    // Punto 16
+    // Punto 16 (Restaurado a la versión funcional anterior)
     public int[] rotarArreglo(int[] arreglo, int posiciones) {
         if (arreglo == null || arreglo.length == 0) return new int[0];
         int n = arreglo.length;
@@ -159,7 +159,7 @@ public class Workshop {
 
         int[] rotado = new int[n];
         for (int i = 0; i < n; i++) {
-            rotado[i] = arreglo[(i + posiciones) % n];
+            rotado[(i + posiciones) % n] = arreglo[i];
         }
         return rotado;
     }
@@ -172,40 +172,40 @@ public class Workshop {
 
     // Punto 18
     public String invertirCadena(String cadena) {
-        if (cadena == null) return "";
+        if (cadena == null) return null;
         return new StringBuilder(cadena).reverse().toString();
     }
 
     // Punto 19
     public boolean esPalindromo(String cadena) {
         if (cadena == null) return false;
-        String limpia = cadena.replaceAll("\\s+", "").toLowerCase();
-        if (limpia.isEmpty()) return false;
+        String limpia = cadena.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
         return limpia.equals(new StringBuilder(limpia).reverse().toString());
     }
 
     // Punto 20
     public int contarPalabras(String cadena) {
-        if (cadena == null || cadena.trim().isEmpty()) return 0;
-        return cadena.trim().split("\\s+").length;
+        if (cadena == null) return 0;
+        String texto = cadena.trim();
+        if (texto.isEmpty()) return 0;
+        return texto.split("\\s+").length;
     }
 
     // Punto 21
     public String convertirAMayusculas(String cadena) {
-        if (cadena == null) return "";
+        if (cadena == null) return null;
         return cadena.toUpperCase();
     }
 
     // Punto 22
     public String convertirAMinusculas(String cadena) {
-        if (cadena == null) return "";
+        if (cadena == null) return null;
         return cadena.toLowerCase();
     }
 
     // Punto 23
     public String reemplazarSubcadena(String cadena, String antiguaSubcadena, String nuevaSubcadena) {
-        if (cadena == null) return "";
-        if (antiguaSubcadena == null || nuevaSubcadena == null) return cadena;
+        if (cadena == null || antiguaSubcadena == null || nuevaSubcadena == null) return cadena;
         return cadena.replace(antiguaSubcadena, nuevaSubcadena);
     }
 
@@ -218,7 +218,7 @@ public class Workshop {
     // Punto 25
     public boolean validarCorreoElectronico(String correo) {
         if (correo == null) return false;
-        return correo.matches("^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$");
+        return correo.matches("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$");
     }
 
     // Punto 26
@@ -243,17 +243,17 @@ public class Workshop {
 
     // Punto 29
     public String jugarPiedraPapelTijeraLagartoSpock(String eleccionUsuario) {
-        if (eleccionUsuario == null) return "";
+        if (eleccionUsuario == null) return null;
         return "Ganaste";
     }
 
     // Punto 30
     public String pptls2(String game[]) {
-        if (game == null || game.length < 2) return "Empate";
+        if (game == null || game.length < 2 || game[0] == null || game[1] == null) return "Empate";
         String p1 = game[0];
         String p2 = game[1];
 
-        if (p1 == null || p2 == null || p1.equals(p2)) return "Empate";
+        if (p1.equals(p2)) return "Empate";
 
         if ((p1.equals("S") && (p2.equals("P") || p2.equals("L"))) ||
             (p1.equals("P") && (p2.equals("R") || p2.equals("V"))) ||
@@ -274,10 +274,11 @@ public class Workshop {
 
     // Punto 32
     public String zoodiac(int day, int month) {
+        if (day < 1 || month < 1 || month > 12) return "Fecha inválida";
         if ((month == 3 && day >= 21) || (month == 4 && day <= 19)) return "Aries";
         if ((month == 4 && day >= 20) || (month == 5 && day <= 20)) return "Tauro";
-        if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) return "Geminis";
-        if ((month == 6 && day >= 21) || (month == 7 && day <= 22)) return "Cancer";
+        if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) return "Géminis";
+        if ((month == 6 && day >= 21) || (month == 7 && day <= 22)) return "Cáncer";
         if ((month == 7 && day >= 23) || (month == 8 && day <= 22)) return "Leo";
         if ((month == 8 && day >= 23) || (month == 9 && day <= 22)) return "Virgo";
         if ((month == 9 && day >= 23) || (month == 10 && day <= 22)) return "Libra";
@@ -286,6 +287,6 @@ public class Workshop {
         if ((month == 12 && day >= 22) || (month == 1 && day <= 19)) return "Capricornio";
         if ((month == 1 && day >= 20) || (month == 2 && day <= 18)) return "Acuario";
         if ((month == 2 && day >= 19) || (month == 3 && day <= 20)) return "Piscis";
-        return "";
+        return "Fecha inválida";
     }
 }
