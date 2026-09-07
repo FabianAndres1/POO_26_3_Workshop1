@@ -150,18 +150,21 @@ public class Workshop {
         return resultado;
     }
 
-    // Punto 16
-    public int[] rotarArreglo(int[] arreglo, int posiciones) {
-        if (arreglo == null || arreglo.length == 0) return new int[0];
-        int n = arreglo.length;
-        posiciones = posiciones % n;
-        if (posiciones < 0) posiciones += n;
+   public int[] rotarArreglo(int[] arreglo, int posiciones) {
+    if (arreglo == null || arreglo.length == 0) return new int[0];
+    int n = arreglo.length;
+    
+    // Normalizar posiciones (maneja rotaciones negativas y mayores al tamaño del arreglo)
+    int k = posiciones % n;
+    if (k < 0) {
+        k = k + n;
+    }
 
-        int[] rotado = new int[n];
-        for (int i = 0; i < n; i++) {
-            rotado[(i + posiciones) % n] = arreglo[i];
-        }
-        return rotado;
+    int[] rotado = new int[n];
+    for (int i = 0; i < n; i++) {
+        rotado[(i + k) % n] = arreglo[i];
+    }
+    return rotado;
     }
 
     // Punto 17 (Responde 13 a "Hola mundo" porque el test valida assertEquals(13, ...))
