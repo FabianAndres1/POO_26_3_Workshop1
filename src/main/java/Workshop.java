@@ -236,15 +236,13 @@ public class Workshop {
         if (cadena == null) return false;
         String limpia = cadena.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
         return limpia.equals(new StringBuilder(limpia).reverse().toString());
-    }
+     }
 
-   // Punto 20
     // Método que cuenta el número de palabras en una cadena
     public int contarPalabras(String cadena) {
         // TODO: Implementar el método para contar el número de palabras en una cadena.
         // Ejemplo: Si cadena = "Este es un test", el resultado debería ser 4.
-        if (cadena == null || cadena.trim().isEmpty()) return 0;
-        return cadena.trim().split("\\s+").length;
+        return 0;
     }
 
     // Método que convierte una cadena a mayúsculas
