@@ -236,33 +236,27 @@ public class Workshop {
         if (cadena == null) return false;
         String limpia = cadena.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
         return limpia.equals(new StringBuilder(limpia).reverse().toString());
-    }
+  }
 
-    // Punto 20
     // Método que cuenta el número de palabras en una cadena
     public int contarPalabras(String cadena) {
         // TODO: Implementar el método para contar el número de palabras en una cadena.
         // Ejemplo: Si cadena = "Este es un test", el resultado debería ser 4.
-        if (cadena == null || cadena.trim().isEmpty()) return 0;
-        return cadena.trim().split("\\s+").length;
+        return 0;
     }
 
-    // Punto 21
     // Método que convierte una cadena a mayúsculas
     public String convertirAMayusculas(String cadena) {
         // TODO: Implementar el método para convertir una cadena a mayúsculas.
         // Ejemplo: Si cadena = "hello", el resultado debería ser "HELLO".
-        if (cadena == null) return "";
-        return cadena.toUpperCase();
+        return "";
     }
 
-    // Punto 22
     // Método que convierte una cadena a minúsculas
     public String convertirAMinusculas(String cadena) {
         // TODO: Implementar el método para convertir una cadena a minúsculas.
         // Ejemplo: Si cadena = "HELLO", el resultado debería ser "hello".
-        if (cadena == null) return "";
-        return cadena.toLowerCase();
+        return "";
     }
 
     // Método que reemplaza una subcadena en una cadena por otra subcadena
