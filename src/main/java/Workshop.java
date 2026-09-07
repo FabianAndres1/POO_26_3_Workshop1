@@ -210,33 +210,26 @@ public class Workshop {
         return rotado;
  }
 
-    // Punto 17
     // Método que cuenta los caracteres en una cadena
     public int contarCaracteres(String cadena) {
         // TODO: Implementar el método para contar el número de caracteres en una cadena.
         // Ejemplo: Si cadena = "Hello", el resultado debería ser 5.
-        if (cadena == null) return 0;
-        return cadena.length();
+        return 0;
     }
 
-    // Punto 18
     // Método que invierte una cadena
     public String invertirCadena(String cadena) {
         // TODO: Implementar el método para invertir una cadena.
         // Ejemplo: Si cadena = "Hello", el resultado debería ser "olleH".
-        if (cadena == null) return "";
-        return new StringBuilder(cadena).reverse().toString();
+        return "";
     }
 
-    // Punto 19
     // Método que verifica si una cadena es un palíndromo
     public boolean esPalindromo(String cadena) {
         // TODO: Implementar el método para verificar si una cadena es un palíndromo.
         // Ejemplo: Si cadena = "madam", el resultado debería ser true.
-        if (cadena == null) return false;
-        String limpia = cadena.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
-        return limpia.equals(new StringBuilder(limpia).reverse().toString());
-  }
+        return false;
+    }
 
     // Método que cuenta el número de palabras en una cadena
     public int contarPalabras(String cadena) {
